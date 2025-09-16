@@ -1,64 +1,64 @@
-export const searchResults = {
-  searchParameters: {
-    q: "Coffee",
-    gl: "us",
-    hl: "en",
-    type: "search",
-    num: 10,
-    autocorrect: true,
-    page: 1,
-    engine: "google",
-  },
-  organic: [
-    {
-      title: "Coffee - Wikipedia",
-      link: "https://en.wikipedia.org/wiki/Coffee",
-      snippet:
-        "Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic...",
-      sitelinks: [
-        {
-          title: "History",
-          link: "https://en.wikipedia.org/wiki/History_of_coffee",
-        },
-        {
-          title: "Coffee bean",
-          link: "https://en.wikipedia.org/wiki/Coffee_bean",
-        },
-      ],
-      position: 1,
-    },
-    {
-      title: "Starbucks Coffee Company",
-      link: "https://www.starbucks.com/",
-      snippet:
-        "More than just great coffee. Explore the menu, sign up for Starbucks® Rewards, manage your gift card and more.",
-      position: 2,
-    },
-    {
-      title: "Coffee - Reddit",
-      link: "https://www.reddit.com/r/Coffee/",
-      snippet:
-        "Hey everyone! Welcome back to the weekly r/Coffee thread where you can share what you are brewing...",
-      date: "Mar 6, 2014",
-      position: 3,
-    },
-    // ... (ajoute les autres résultats si besoin)
-  ],
-  peopleAlsoAsk: [
-    {
-      question: "What is the 80/20 rule for coffee?",
-      snippet:
-        "80% of coffee's flavor comes from the bean and its origin, while 20% depends on the brewing process.",
-      link: "https://scandalouscoffee.com/blogs/articles/what-is-the-80-20-rule-for-coffee",
-    },
-  ],
-  relatedSearches: [
-    { query: "Cappuccino" },
-    { query: "Coffee near me" },
-    { query: "Coffee shop" },
-  ],
-  credits: 1,
-};
+// export const searchResults = {
+//   searchParameters: {
+//     q: "Coffee",
+//     gl: "us",
+//     hl: "en",
+//     type: "search",
+//     num: 10,
+//     autocorrect: true,
+//     page: 1,
+//     engine: "google",
+//   },
+//   organic: [
+//     {
+//       title: "Coffee - Wikipedia",
+//       link: "https://en.wikipedia.org/wiki/Coffee",
+//       snippet:
+//         "Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic...",
+//       sitelinks: [
+//         {
+//           title: "History",
+//           link: "https://en.wikipedia.org/wiki/History_of_coffee",
+//         },
+//         {
+//           title: "Coffee bean",
+//           link: "https://en.wikipedia.org/wiki/Coffee_bean",
+//         },
+//       ],
+//       position: 1,
+//     },
+//     {
+//       title: "Starbucks Coffee Company",
+//       link: "https://www.starbucks.com/",
+//       snippet:
+//         "More than just great coffee. Explore the menu, sign up for Starbucks® Rewards, manage your gift card and more.",
+//       position: 2,
+//     },
+//     {
+//       title: "Coffee - Reddit",
+//       link: "https://www.reddit.com/r/Coffee/",
+//       snippet:
+//         "Hey everyone! Welcome back to the weekly r/Coffee thread where you can share what you are brewing...",
+//       date: "Mar 6, 2014",
+//       position: 3,
+//     },
+//     // ... (ajoute les autres résultats si besoin)
+//   ],
+//   peopleAlsoAsk: [
+//     {
+//       question: "What is the 80/20 rule for coffee?",
+//       snippet:
+//         "80% of coffee's flavor comes from the bean and its origin, while 20% depends on the brewing process.",
+//       link: "https://scandalouscoffee.com/blogs/articles/what-is-the-80-20-rule-for-coffee",
+//     },
+//   ],
+//   relatedSearches: [
+//     { query: "Cappuccino" },
+//     { query: "Coffee near me" },
+//     { query: "Coffee shop" },
+//   ],
+//   credits: 1,
+// };
 
 export const imageResults = {
   searchParameters: {
@@ -445,6 +445,351 @@ export const newResults = {
       imageUrl:
         "data:image/jpeg;base64,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",
     },
+  ],
+  credits: 1,
+};
+
+
+
+export const searchResults = {
+  searchParameters: {
+    q: "Coffee",
+    gl: "us",
+    hl: "en",
+    type: "search",
+    num: 40,
+    autocorrect: true,
+    page: 1,
+    engine: "google",
+  },
+  organic: [
+    {
+      title: "Coffee - Wikipedia",
+      link: "https://en.wikipedia.org/wiki/Coffee",
+      snippet:
+        "Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and slightly acidic...",
+      sitelinks: [
+        {
+          title: "History",
+          link: "https://en.wikipedia.org/wiki/History_of_coffee",
+        },
+        {
+          title: "Coffee bean",
+          link: "https://en.wikipedia.org/wiki/Coffee_bean",
+        },
+      ],
+      position: 1,
+    },
+    {
+      title: "Starbucks Coffee Company",
+      link: "https://www.starbucks.com/",
+      snippet:
+        "More than just great coffee. Explore the menu, sign up for Starbucks® Rewards, manage your gift card and more.",
+      position: 2,
+    },
+    {
+      title: "Coffee - Reddit",
+      link: "https://www.reddit.com/r/Coffee/",
+      snippet:
+        "Hey everyone! Welcome back to the weekly r/Coffee thread where you can share what you are brewing...",
+      date: "Mar 6, 2014",
+      position: 3,
+    },
+    {
+      title: "Blue Bottle Coffee",
+      link: "https://bluebottlecoffee.com/",
+      snippet:
+        "Specialty coffee roasters. Discover freshly roasted single origin beans, subscriptions, and cafes worldwide.",
+      position: 4,
+    },
+    {
+      title: "Peet's Coffee",
+      link: "https://www.peets.com/",
+      snippet:
+        "Since 1966, Peet's Coffee has been sourcing the finest coffee beans and hand-roasting them in small batches.",
+      position: 5,
+    },
+    {
+      title: "National Coffee Association",
+      link: "https://www.ncausa.org/",
+      snippet:
+        "NCA is the leading trade association for coffee in the USA. Learn about coffee trends, history, and science.",
+      position: 6,
+    },
+    {
+      title: "Intelligentsia Coffee",
+      link: "https://www.intelligentsiacoffee.com/",
+      snippet:
+        "Direct trade coffee roasters dedicated to sustainability, quality, and transparency in every cup.",
+      position: 7,
+    },
+    {
+      title: "Coffee and Health",
+      link: "https://www.coffeeandhealth.org/",
+      snippet:
+        "Explore the science behind coffee and its effects on health, including caffeine, antioxidants, and hydration.",
+      position: 8,
+    },
+    {
+      title: "Coffee Bean & Tea Leaf",
+      link: "https://www.coffeebean.com/",
+      snippet:
+        "Premium coffee and tea since 1963. Order online or visit our cafes for handcrafted drinks and food.",
+      position: 9,
+    },
+    {
+      title: "Specialty Coffee Association (SCA)",
+      link: "https://sca.coffee/",
+      snippet:
+        "Global coffee organization promoting excellence in specialty coffee through research, education, and events.",
+      position: 10,
+    },
+    {
+      title: "Coffee Research Institute",
+      link: "http://www.coffeeresearch.org/",
+      snippet:
+        "Dedicated to coffee science: brewing methods, roasting, espresso, and the chemistry of coffee flavor.",
+      position: 11,
+    },
+    {
+      title: "Coffee Science Foundation",
+      link: "https://coffeescience.org/",
+      snippet:
+        "Advancing coffee science with research on brewing, sensory experience, and consumer health.",
+      position: 12,
+    },
+    {
+      title: "Lavazza Coffee",
+      link: "https://www.lavazza.com/",
+      snippet:
+        "Italian coffee brand since 1895. Discover espresso blends, ground coffee, and coffee machines.",
+      position: 13,
+    },
+    {
+      title: "Nespresso USA",
+      link: "https://www.nespresso.com/us/",
+      snippet:
+        "Explore Nespresso coffee capsules, machines, and sustainable practices for coffee lovers.",
+      position: 14,
+    },
+    {
+      title: "Folgers Coffee",
+      link: "https://www.folgerscoffee.com/",
+      snippet:
+        "The best part of waking up is Folgers in your cup®. America's classic ground coffee brand.",
+      position: 15,
+    },
+    {
+      title: "Dunkin' Coffee",
+      link: "https://www.dunkindonuts.com/",
+      snippet:
+        "Grab a cup of Dunkin' coffee, espresso, or cold brew. Find stores, deals, and rewards online.",
+      position: 16,
+    },
+    {
+      title: "Coffee Brewing Guide - Perfect Daily Grind",
+      link: "https://perfectdailygrind.com/category/coffee-brewing/",
+      snippet:
+        "Step-by-step guides and tips on brewing coffee at home: espresso, pour-over, French press, AeroPress.",
+      position: 17,
+    },
+    {
+      title: "Arabica vs Robusta Coffee Beans",
+      link: "https://www.javapresse.com/blogs/coffee/arabica-vs-robusta",
+      snippet:
+        "Learn the differences between Arabica and Robusta beans: flavor, caffeine content, and growing regions.",
+      position: 18,
+    },
+    {
+      title: "Coffee Atlas of Ethiopia - Counter Culture",
+      link: "https://counterculturecoffee.com/learn/coffee/ethiopia",
+      snippet:
+        "Dive into the origins of Ethiopian coffee: processing methods, regions, and flavor profiles.",
+      position: 19,
+    },
+    {
+      title: "Home Coffee Roasting Basics",
+      link: "https://www.sweetmarias.com/library/home-roasting-basics",
+      snippet:
+        "A beginner's guide to roasting coffee beans at home: methods, equipment, and tips.",
+      position: 20,
+    },
+    {
+      title: "How to Make Cold Brew Coffee",
+      link: "https://www.simplyrecipes.com/recipes/how_to_make_cold_brew_coffee/",
+      snippet:
+        "An easy recipe for smooth and refreshing cold brew coffee you can make at home.",
+      position: 21,
+    },
+    {
+      title: "Coffee Review",
+      link: "https://www.coffeereview.com/",
+      snippet:
+        "Expert reviews and ratings of specialty coffee beans, roasters, and brewing equipment.",
+      position: 22,
+    },
+    {
+      title: "The Coffee Compass",
+      link: "https://www.thecoffeecompass.com/",
+      snippet:
+        "Guides, reviews, and insights into the world of specialty coffee, from barista tips to origin stories.",
+      position: 23,
+    },
+    {
+      title: "History of Coffee - National Coffee Association",
+      link: "https://www.ncausa.org/About-Coffee/History-of-Coffee",
+      snippet:
+        "From Ethiopia to your cup: the fascinating journey of coffee through history.",
+      position: 24,
+    },
+    {
+      title: "Coffee Subscription Services",
+      link: "https://www.tradecoffee.com/",
+      snippet:
+        "Discover personalized coffee subscriptions delivering fresh beans from top US roasters.",
+      position: 25,
+    },
+    {
+      title: "Coffee Gear - Seattle Coffee Gear",
+      link: "https://www.seattlecoffeegear.com/",
+      snippet:
+        "Shop espresso machines, grinders, and brewing equipment for home baristas.",
+      position: 26,
+    },
+    {
+      title: "Coffee Chemistry",
+      link: "https://www.coffeechemistry.com/",
+      snippet:
+        "Scientific articles and insights about coffee's chemistry, extraction, and flavor compounds.",
+      position: 27,
+    },
+    {
+      title: "Coffee Forum",
+      link: "https://www.coffeeforums.com/",
+      snippet:
+        "Join the largest online coffee community. Discuss brewing, beans, roasting, and equipment.",
+      position: 28,
+    },
+    {
+      title: "Coffee Tasting Wheel - SCA",
+      link: "https://sca.coffee/research/tasting-wheel",
+      snippet:
+        "Visualize coffee flavors with the Specialty Coffee Association's coffee tasting wheel.",
+      position: 29,
+    },
+    {
+      title: "Coffee Culture Around the World",
+      link: "https://www.atlasobscura.com/articles/coffee-culture-around-world",
+      snippet:
+        "Explore unique coffee traditions from Turkey to Vietnam and beyond.",
+      position: 30,
+    },
+    {
+      title: "Coffee Facts - Britannica",
+      link: "https://www.britannica.com/topic/coffee",
+      snippet:
+        "Comprehensive encyclopedia entry about coffee: history, cultivation, and cultural impact.",
+      position: 31,
+    },
+    {
+      title: "Coffee Consumption Statistics",
+      link: "https://worldcoffeeportal.com/",
+      snippet:
+        "Latest coffee market trends and consumption statistics worldwide.",
+      position: 32,
+    },
+    {
+      title: "Coffee Makers - Amazon",
+      link: "https://www.amazon.com/Coffee-Makers/b?node=289745",
+      snippet:
+        "Shop the best-selling coffee makers, espresso machines, and accessories.",
+      position: 33,
+    },
+    {
+      title: "Coffee Podcasts",
+      link: "https://www.catandcloud.com/podcast",
+      snippet:
+        "Listen to conversations about coffee culture, entrepreneurship, and brewing tips.",
+      position: 34,
+    },
+    {
+      title: "Coffee Blogs - Sprudge",
+      link: "https://sprudge.com/",
+      snippet:
+        "News and articles on the global coffee community: cafes, competitions, and culture.",
+      position: 35,
+    },
+    {
+      title: "Coffee Sustainability",
+      link: "https://www.rainforest-alliance.org/issues/coffee",
+      snippet:
+        "Learn about sustainable coffee farming, certifications, and environmental impact.",
+      position: 36,
+    },
+    {
+      title: "Coffee Roasting Science - Scott Rao",
+      link: "https://www.scottrao.com/",
+      snippet:
+        "Books and resources on coffee roasting, brewing, and cafe operations.",
+      position: 37,
+    },
+    {
+      title: "Coffee Tourism",
+      link: "https://perfectdailygrind.com/category/coffee-tours/",
+      snippet:
+        "Coffee farm tours and travel experiences in producing countries worldwide.",
+      position: 38,
+    },
+    {
+      title: "Coffee Equipment Reviews",
+      link: "https://home-barista.com/",
+      snippet:
+        "In-depth reviews of espresso machines, grinders, and brewing gear for enthusiasts.",
+      position: 39,
+    },
+    {
+      title: "Coffee and Climate Change",
+      link: "https://www.nature.org/en-us/what-we-do/our-insights/perspectives/coffee-and-climate/",
+      snippet:
+        "How climate change is impacting global coffee production and what can be done.",
+      position: 40,
+    },
+  ],
+  peopleAlsoAsk: [
+    {
+      question: "What is the 80/20 rule for coffee?",
+      snippet:
+        "80% of coffee's flavor comes from the bean and its origin, while 20% depends on the brewing process.",
+      link: "https://scandalouscoffee.com/blogs/articles/what-is-the-80-20-rule-for-coffee",
+    },
+    {
+      question: "Is coffee good or bad for your health?",
+      snippet:
+        "Studies show moderate coffee consumption can reduce the risk of certain diseases, but too much caffeine can have side effects.",
+      link: "https://www.healthline.com/nutrition/coffee-good-or-bad",
+    },
+    {
+      question: "Which country drinks the most coffee?",
+      snippet:
+        "Finland tops the world in coffee consumption per capita, averaging 4 cups a day.",
+      link: "https://worldpopulationreview.com/country-rankings/coffee-consumption-by-country",
+    },
+    {
+      question: "What is specialty coffee?",
+      snippet:
+        "Specialty coffee refers to the highest grade of coffee available, distinguished by unique flavors and origin.",
+      link: "https://sca.coffee/research/definition-of-specialty-coffee",
+    },
+  ],
+  relatedSearches: [
+    { query: "Cappuccino" },
+    { query: "Coffee near me" },
+    { query: "Coffee shop" },
+    { query: "Espresso" },
+    { query: "Best coffee beans" },
+    { query: "Cold brew coffee" },
+    { query: "Coffee brewing methods" },
+    { query: "Coffee subscription" },
   ],
   credits: 1,
 };

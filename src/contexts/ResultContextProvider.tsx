@@ -21,10 +21,17 @@ type ImageResults = {
   searchParameters: Record<string, any>,
   images: Array<{
     title: string,
-    source: string,
-    link: string,
     imageUrl: string,
-    thumbnail: string
+    imageWidth: number,
+    imageHeight: number,
+    thumbnailUrl: string,
+    thumbnailWidth: number,
+    thumbnailHeight: number,
+    source: string,
+    domain: string,
+    link: string,
+    googleUrl: string,
+    position: number
   }>;
 };
 
@@ -67,7 +74,7 @@ type ResultContextType = {
 };
 
 const ResultContext = createContext<ResultContextType | undefined>(undefined)
-const baseUrl = "https://google-search-master-mega.p.rapidapi.com";
+//const baseUrl = "https://google-search-master-mega.p.rapidapi.com";
 
 export const ResultContextProvider: React.FC<ResultContextProviderProps> = ({ children }) => {
     const [results, setResults] = useState<ApiResults | null>(null);
@@ -76,20 +83,27 @@ export const ResultContextProvider: React.FC<ResultContextProviderProps> = ({ ch
 
     const getResults = async (type: string) => {
         setIsLoading(true);
-
         // const response = await fetch(`${baseUrl}${type}`, {
         //     method: "GET",
         //     headers: {
-        //         'x-rapidapi-key': process.env.REACT_APP_API_KEY,
-		    //         'x-rapidapi-host': 'google-search74.p.rapidapi.com'
+        //         'x-rapidapi-key': '6306af3903mshbe45f57aa5b51abp1c643djsnfa602752a48c',
+        //         'x-rapidapi-host': 'google-search-master-mega.p.rapidapi.com'
         //     }
-        // })
-        
-        //const data = await response.json();
-        const data = videoResults;
-        console.log("DATA", data);
+        // }) 
+        // const data = await response.json();
+        // console.log("DATA", data);
+        // setResults(data);
 
-        setResults(data);
+        const term = type.slice(0, type.indexOf("?"));
+        if(term === "/search")
+          setResults(searchResults);
+        else if(term === "/images")
+          setResults(imageResults);
+        else if(term === "/news")
+          setResults(newResults);
+        else if(term === "/videos")
+          setResults(videoResults);
+
         setIsLoading(false);
     }
 

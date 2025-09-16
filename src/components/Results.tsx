@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import ReactPlayer from "react-player";
 
@@ -11,7 +11,7 @@ const Results = () => {
 
   useEffect(() => {
     if(searchTerm) {
-      getResults(`${location.pathname}/q=${searchTerm}&num=40`);
+      getResults(`${location.pathname}?q=${searchTerm}&num=40`);
     }
   }, [searchTerm, location.pathname])
 
@@ -47,9 +47,9 @@ const Results = () => {
           <div className="flex flex-wrap justify-center items-center">
             {results.images?.map(({ link, imageUrl, title }, index) => (
               <a className="sm:p-3 p-5" href={link} key={index} target="_blank" rel="noreferrer">
-                <img src={imageUrl} alt={title} loading="lazy"/>
+                <img className="w-full h-32 max-w-32" src={imageUrl} alt={title} loading="lazy"/>
                 <p className="w-36 break-words text-sm mt-2">
-                  {title}
+                  {title.length > 20 ? title.substring(0,20) + "..." : title}
                 </p>
               </a>
             ))}
@@ -59,7 +59,7 @@ const Results = () => {
     case "/news":
       if ("news" in (results))
         return (
-          <div className="flex w-full max-w-[720px] flex-wrap gap-4 justify-center items-center sm:p-3 p-5">
+          <div className="lg:ml-72 flex w-full max-w-[720px] flex-wrap gap-4 justify-center items-center sm:p-3 p-5">
             {results.news?.map(({ link, title, imageUrl }, index) => (
               <a className="w-full flex items-center gap-4 hover:underline" href={link} key={index} target="_blank" rel="noreferrer">
                 <p className="w-full text-lg dark:text-blue-300 text-blue-700">
@@ -74,8 +74,8 @@ const Results = () => {
     case "/videos":
       if ("videos" in (results))
         return (
-          <div className="flex w-full max-w-[720px] flex-wrap gap-4 justify-center items-center sm:p-3 p-5">
-            {results.videos.map(({ link, title, snippet, date, imageUrl, videoUrl, source, channel, duration }, index) => (
+          <div className="lg:ml-72 flex w-full max-w-[720px] flex-wrap gap-4 justify-center items-center sm:p-3 p-5">
+            {results.videos.map(({ link, title, snippet, date, source, channel, duration }, index) => (
               <a className="w-full flex flex-col items-start" href={link} key={index} target="_blank" rel="noreferrer">
                 <p>
                   {source}
@@ -99,7 +99,7 @@ const Results = () => {
         );
         break;
     default:
-      return 'ERROR';
+      return (<div>'ERROR'</div>);
   } 
 }
 

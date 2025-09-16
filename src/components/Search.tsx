@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 
 import { useResultContext } from "../contexts/ResultContextProvider";
@@ -22,7 +22,7 @@ const Search = () => {
         placeholder="Search Goggl or type URL"
         onChange={(e) => setText(e.target.value)}
       />
-      {!text && (
+      {text && (
         <button type="button" className="absolute top-1.5 right-4 text-2xl text-gray-500 " onClick={() => setText("")} >
           x
         </button>
